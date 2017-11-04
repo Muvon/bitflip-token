@@ -1,6 +1,6 @@
-Bitcoin Core version 0.14.2 is now available from:
+Bitcoin Core version 0.1.0 is now available from:
 
-  <https://bitcoin.org/bin/bitcoin-core-0.14.2/>
+  <https://bitcoin.org/bin/bitcoin-core-0.1.0/>
 
 This is a new minor version release, including various bugfixes and
 performance improvements, as well as updated translations.
@@ -54,7 +54,7 @@ smart fee slider. It will only present an approximate fee calculated using the
 default target. The fee calculated using the correct target is still applied to
 the transaction and shown in the final send confirmation dialog.
 
-0.14.2 Change log
+0.1.0 Change log
 =================
 
 Detailed release notes follow. This overview includes changes that affect

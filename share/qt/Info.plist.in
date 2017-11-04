@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Litecoin-Qt</string>
+  <string>BitFlip-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Litecoin-Qt</string>
+  <string>BitFlip-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.litecoin.Litecoin-Qt</string>
+  <string>info.bitflip.BitFlip-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.litecoin.LitecoinPayment</string>
+      <string>info.bitflip.BitFlipPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>litecoin</string>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.litecoin.paymentrequest</string>
+      <string>info.bitflip.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Litecoin payment request</string>
+      <string>BitFlip payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.litecoin.paymentrequest</string>
+        <string>info.bitflip.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>
