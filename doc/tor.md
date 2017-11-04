@@ -1,4 +1,4 @@
-TOR SUPPORT IN LITECOIN
+TOR SUPPORT IN BITFLIP
 ======================
 
 It is possible to run BitFlip as a Tor hidden service, and connect to such services.
