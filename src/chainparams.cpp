@@ -73,7 +73,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("8fbfc54196d0d6c537d8c29a0897c39a82284f34cb5de47a5129b041a1e3b022");
+        consensus.BIP34Hash = uint256S("2bcd89cb961c4eb734f1afa3681aacb707f0513cb883693784c0509aedb7b7da");
         consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -110,10 +110,10 @@ public:
         pchMessageStart[3] = 0x44;
         nDefaultPort = 21743;
         nPruneAfterHeight = 100000;
-        // python genesis.py -a scrypt -z "BitFlip @ June 17, 2017, FLIP @ November, 1 2017" -p "043cc13876ac5ff42f513bac50fc490ccef1034e341fd15531d7a174af21b6715df25d1f81e281dc2ea5d24bb167ec142de4388102cba3636c067f93d01563af32" -t 1509882992 -n 0 -b 504365040
-        genesis = CreateGenesisBlock(1509882992, 3272700, 0x1e0ffff0, 1, 50 * COIN);
+        // python genesis.py -a scrypt -z "BitFlip @ June 17, 2017, FLIP @ November, 1 2017" -p "043cc13876ac5ff42f513bac50fc490ccef1034e341fd15531d7a174af21b6715df25d1f81e281dc2ea5d24bb167ec142de4388102cba3636c067f93d01563af32" -t 1509882992 -n 3817060000 -b 504365040
+        genesis = CreateGenesisBlock(1509882992, 3817169445, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x8fbfc54196d0d6c537d8c29a0897c39a82284f34cb5de47a5129b041a1e3b022"));
+        assert(consensus.hashGenesisBlock == uint256S("0x2bcd89cb961c4eb734f1afa3681aacb707f0513cb883693784c0509aedb7b7da"));
         assert(genesis.hashMerkleRoot == uint256S("0x32526908fbc8a86a6c32856e1f2744f878205ddb4e1f339668f83bed6ac2d1ac"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
@@ -142,7 +142,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0x8fbfc54196d0d6c537d8c29a0897c39a82284f34cb5de47a5129b041a1e3b022"))
+            ( 0, uint256S("0x2bcd89cb961c4eb734f1afa3681aacb707f0513cb883693784c0509aedb7b7da"))
         };
 
         chainTxData = ChainTxData{
@@ -196,9 +196,9 @@ public:
         nDefaultPort = 31743;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1509733164, 334947, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1509882992, 3850397462, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xffac198744238c21b7f2d73a32ef7169d46087092875062c6ce1516f250e4cff"));
+        assert(consensus.hashGenesisBlock == uint256S("0xf061eb683863786a819e81b8215d7da2ce72a02055feaa86a3f503567b8fe753"));
         assert(genesis.hashMerkleRoot == uint256S("0x32526908fbc8a86a6c32856e1f2744f878205ddb4e1f339668f83bed6ac2d1ac"));
 
         vFixedSeeds.clear();
@@ -220,7 +220,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0xffac198744238c21b7f2d73a32ef7169d46087092875062c6ce1516f250e4cff")),
+            ( 0, uint256S("0xf061eb683863786a819e81b8215d7da2ce72a02055feaa86a3f503567b8fe753")),
         };
 
         chainTxData = ChainTxData{
