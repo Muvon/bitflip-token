@@ -71,18 +71,18 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 500000;
+        consensus.nSubsidyHalvingInterval = 320000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("2bcd89cb961c4eb734f1afa3681aacb707f0513cb883693784c0509aedb7b7da");
         consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 3 * 24 * 60 * 60; // 3 days
-        consensus.nPowTargetSpacing = 5 * 60;
+        consensus.nPowTargetTimespan = 1.75 * 24 * 60 * 60; // 1.75 days
+        consensus.nPowTargetSpacing = 4 * 60; // 4 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 2592; // 75% of 3456
-        consensus.nMinerConfirmationWindow = 3456; // nPowTargetTimespan / nPowTargetSpacing * 4
+        consensus.nRuleChangeActivationThreshold = 1890; // 75% of 2520
+        consensus.nMinerConfirmationWindow = 2520; // nPowTargetTimespan / nPowTargetSpacing * 4
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;
@@ -161,18 +161,18 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 500000;
+        consensus.nSubsidyHalvingInterval = 320000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 3 * 24 * 60 * 60; // 3.5 days
-        consensus.nPowTargetSpacing = 5 * 60;
+        consensus.nPowTargetTimespan = 1.75 * 24 * 60 * 60; // 1.75 days
+        consensus.nPowTargetSpacing = 4 * 60; // 4 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 472; // 75% of 2520
+        consensus.nMinerConfirmationWindow = 630; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;
@@ -246,12 +246,12 @@ public:
         consensus.BIP65Height = 1; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 3 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 5 * 60;
+        consensus.nPowTargetTimespan = 1.75 * 24 * 60 * 60; // 1.75 days
+        consensus.nPowTargetSpacing = 4 * 60; // 4 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
-        consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
+        consensus.nRuleChangeActivationThreshold = 108; // 75% of 2520
+        consensus.nMinerConfirmationWindow = 144; // nPowTargetTimespan / nPowTargetSpacing * 4
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;
