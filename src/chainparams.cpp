@@ -71,10 +71,10 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 300000;
+        consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0xa717ca44bca2d1b5b211c7c7595e96924fba991c545f6e5411b17451520c2414");
-        consensus.BIP65Height = 1; 
+        consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 3 * 24 * 60 * 60; // 3 days
@@ -110,12 +110,9 @@ public:
         pchMessageStart[3] = 0x44;
         nDefaultPort = 21743;
         nPruneAfterHeight = 100000;
-        genesis = CreateGenesisBlock(1509733158, 0, 0x207fffff, 1, 50 * COIN);
-        // python genesis.py -a scrypt -z "BitFlip @ June 17, 2017, FLIP @ November, 1 2017" -p "043cc13876ac5ff42f513bac50fc490ccef1034e341fd15531d7a174af21b6715df25d1f81e281dc2ea5d24bb167ec142de4388102cba3636c067f93d01563af32" -t 1509733158 -n 0 -b 0x207fffff
+        // python genesis.py -a scrypt -z "BitFlip @ June 17, 2017, FLIP @ November, 1 2017" -p "043cc13876ac5ff42f513bac50fc490ccef1034e341fd15531d7a174af21b6715df25d1f81e281dc2ea5d24bb167ec142de4388102cba3636c067f93d01563af32" -t 1509533164 -n 0 -b 0x1e0ffff0
         genesis = CreateGenesisBlock(1509533164, 2527208, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // std::cout << "One: " << consensus.hashGenesisBlock.ToString() << "\n";
-        // std::cout << "Two: " << genesis.hashMerkleRoot.ToString() << "\n";
         assert(consensus.hashGenesisBlock == uint256S("0xa717ca44bca2d1b5b211c7c7595e96924fba991c545f6e5411b17451520c2414"));
         assert(genesis.hashMerkleRoot == uint256S("0x32526908fbc8a86a6c32856e1f2744f878205ddb4e1f339668f83bed6ac2d1ac"));
 
@@ -164,10 +161,10 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 300000;
+        consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256();
-        consensus.BIP65Height = 1; 
+        consensus.BIP65Height = 1;
         consensus.BIP66Height = 1;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3 * 24 * 60 * 60; // 3.5 days
