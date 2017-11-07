@@ -1,6 +1,8 @@
 *.tar.gz
 
 *.exe
+Thumbs.db
+
 src/bitflip
 src/bitflipd
 src/bitflip-cli
