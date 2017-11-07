@@ -59,6 +59,27 @@ A host toolchain (`build-essential`) is necessary because some dependency
 packages (such as `protobuf`) need to build host utilities that are used in the
 build process.
 
+
+Also install libdb4.8
+
+    sudo apt-get install software-properties-common
+    sudo add-apt-repository ppa:bitcoin/bitcoin
+    sudo apt-get update
+    sudo apt-get install libdb4.8-dev libdb4.8++-dev
+
+
+Also dont forget to select posix alternatives to prevent mutex error:
+
+    sudo update-alternatives --config x86_64-w64-mingw32-g++
+    sudo update-alternatives --config x86_64-w64-mingw32-gcc
+
+
+If you want build GUI install Qt
+
+    sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+
+
+
 ## Building for 64-bit Windows
 
 To build executables for Windows 64-bit, install the following dependencies:
@@ -66,7 +87,8 @@ To build executables for Windows 64-bit, install the following dependencies:
     sudo apt-get install g++-mingw-w64-x86-64 mingw-w64-x86-64-dev
 
 Then build using:
-
+  
+    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
     cd depends
     make HOST=x86_64-w64-mingw32
     cd ..
@@ -80,14 +102,23 @@ To build executables for Windows 32-bit, install the following dependencies:
 
     sudo apt-get install g++-mingw-w64-i686 mingw-w64-i686-dev 
 
+
 Then build using:
+
+    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
 
     cd depends
     make HOST=i686-w64-mingw32
     cd ..
     ./autogen.sh # not required when building from tarball
-    CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=/
+    CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=/ --with-gui=qt5
     make
+
+
+If there are errors, try (https://github.com/bitcoin/bitcoin/issues/10269)
+
+    export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+    make HOST=x86_64-w64-mingw32 V=1
 
 ## Depends system
 
