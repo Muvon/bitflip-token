@@ -73,6 +73,11 @@ Also dont forget to select posix alternatives to prevent mutex error:
     sudo update-alternatives --config x86_64-w64-mingw32-g++
     sudo update-alternatives --config x86_64-w64-mingw32-gcc
 
+And also for 32 bit
+
+    sudo update-alternatives --config i686-w64-mingw32-g++
+    sudo update-alternatives --config i686-w64-mingw32-gcc
+
 
 If you want build GUI install Qt
 
@@ -100,7 +105,7 @@ Then build using:
 
 To build executables for Windows 32-bit, install the following dependencies:
 
-    sudo apt-get install g++-mingw-w64-i686 mingw-w64-i686-dev 
+    sudo apt-get install g++-mingw-w64-i686 mingw-w64-i686-dev V=1
 
 
 Then build using:
@@ -108,7 +113,7 @@ Then build using:
     PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
 
     cd depends
-    make HOST=i686-w64-mingw32
+    make HOST=i686-w64-mingw32 V=1
     cd ..
     ./autogen.sh # not required when building from tarball
     CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=/ --with-gui=qt5
